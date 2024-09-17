@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    
+</head>
+
+<body>
+    <h1>Select Meal Time</h1>
+    <!-- Form with two buttons -->
+    <form id="mealForm">
+        <button type="button" onclick="displayRecipe('Noon')">Noon</button>
+        <button type="button" onclick="displayRecipe('Sunset')">Sunset</button>
+        <button type="button" onclick="displayRecipe('Clear')">Clear</button>
+    </form>
+
+    <!-- Lunch recipe, hidden initially -->
+    <div id="lunch" style="display: none;">
+        <h1>Lunch Recipe</h1>
+        <ol>
+            <li>Prepare burger patty</li>
+            <li>Grill patty on medium heat</li>
+            <li>Toast bun while grilling meat</li>
+            <li>Prepare toppings</li>
+            <li>Assemble ingredients into a burger when done</li>
+        </ol>
+    </div>
+
+    <!-- Dinner recipe, hidden initially -->
+    <div id="dinner" style="display: none;">
+        <h1>Dinner Recipe</h1>
+        <ol>
+            <li>Boil pasta in salted water</li>
+            <li>Fry bacon until crispy</li>
+            <li>Mix egg yolks with cheese</li>
+            <li>Toss pasta with the bacon and egg mixture</li>
+            <li>Serve with black pepper</li>
+        </ol>
+    </div>
+
+    <script>
+        // Function to display the correct recipe based on user's choice
+        function displayRecipe(timeOfDay) {
+            const lunchDiv = document.getElementById('lunch');
+            const dinnerDiv = document.getElementById('dinner');
+
+            // Hide both recipes initially
+            lunchDiv.style.display = 'none';
+            dinnerDiv.style.display = 'none';
+
+            // Show the selected recipe
+            if (timeOfDay === "Noon") {
+                lunchDiv.style.display = 'block';
+            } else if (timeOfDay === "Sunset") {
+                dinnerDiv.style.display = 'block';
+            }
+        }
+    </script>
+
+</body>
+</html>
