@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+    
+</head>
+
+<body>
+    <h1>You should cook Breakfast Lunch Dinner. It's </h1> 
+    <!-- Form with two buttons -->
+    
+    <div id="Breakfast"></div>
+        <h1>Breakfast Recipe 
+            <span id="curTime"></span>
+        </h1>
+        <ol>
+            <li>Boil pasta in salted water</li>
+            <li>Fry bacon until crispy</li>
+            <li>Mix egg yolks with cheese</li>
+            <li>Toss pasta with the bacon and egg mixture</li>
+            <li>Serve with black pepper</li>
+        </ol>
+    </div>
+
+
+    <!-- Lunch recipe, hidden initially -->
+    <div id="lunch">
+        <h1>Lunch Recipe</h1>
+        <ol>
+            <li>Prepare burger patty</li>
+            <li>Grill patty on medium heat</li>
+            <li>Toast bun while grilling meat</li>
+            <li>Prepare toppings</li>
+            <li>Assemble ingredients into a burger when done</li>
+        </ol>
+    </div>
+
+    <!-- Dinner recipe, hidden initially -->
+    <div id="dinner">
+        <h1>Dinner Recipe</h1>
+        <ol>
+            <li>Boil pasta in salted water</li>
+            <li>Fry bacon until crispy</li>
+            <li>Mix egg yolks with cheese</li>
+            <li>Toss pasta with the bacon and egg mixture</li>
+            <li>Serve with black pepper</li>
+        </ol>
+    </div>
+
+
+
+    <script>
+       function curTime(){
+        var hr=d.getHours();
+        var min=d.getMinutes();
+        var ampm;
+       }
+
+       if (min<10){
+        min = "0" + min;
+       }
+
+       if(hr==12){
+        ampm= "PM";
+       } else if(hr>12){
+        hr -= 12;
+        ampm="PM";
+       }else{
+        ampm = "am";
+       }
+
+       var time=hr+":"+min+ampm;
+
+       document.getElementById("curTime").innerText = time;
+
+       curTime();
+    </script>
+
+</body>
+</html>
